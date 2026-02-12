@@ -1,6 +1,7 @@
 <!-- ================= HTML (JS INTEGRADO) ================= -->
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,15 +12,62 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logopesc.png" type="image/png">
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">JR REPRESENTAÇÃO</div>
+
+    <div class="brand">
+
+      <img src="img/logo.png" alt="Logo" class="brand-logo">
+
+      <div class="brand-text">
+        <span class="brand-top"><strong>JR</strong></span>
+        <span class="brand-bottom"><strong>REPRESENTAÇÃO</strong></span>
+      </div>
+
+    </div>
+
+    <!-- LINKS DIREITA -->
     <nav class="nav-links">
-      <a href="#">Contato</a>
+
+      <!-- WHATS -->
+      <div class="dropdown">
+
+        <button class="nav-contact" onclick="toggleWhats()">
+          <img src="img/whatsapp.png">
+          WhatsApp ▾
+        </button>
+
+        <div class="dropdown-content" id="dropdownWhats">
+          <a href="https://wa.me/5518996920329" target="_blank">João - Representante</a>
+          <a href="https://wa.me/5515997542108" target="_blank">Guilherme - Escritório</a>
+          <a href="https://wa.me/5515996888602" target="_blank">Thauany - Escritório</a>
+        </div>
+
+      </div>
+
+      <!-- EMAIL -->
+      <div class="dropdown">
+
+        <button class="nav-contact" onclick="toggleEmail()">
+          <img src="img/email.png">
+          Email ▾
+        </button>
+
+        <div class="dropdown-content" id="dropdownEmail">
+          <a href="mailto:jrr.repcom@gmail.com ">João - Representante</a>
+          <a href="mailto:atendimento.repcom@gmail.com">Guilherme - Escritório</a>
+          <a href="mailto:suporte1.repcom@gmail.com ">Thauany - Escritório</a>
+        </div>
+
+      </div>
+
     </nav>
+
   </header>
 
   <!-- HERO -->
@@ -39,58 +87,86 @@
   <!-- ================= JAVASCRIPT DENTRO DO HTML ================= -->
   <script>
 
-const brands = [
-  {
-    name: "PIX",
-    logo: "img/pix.png"
-  },
-  {
-    name: "FOCO METALLO",
-    logo: "img/focometallo.png"
-  },
-  {
-    name: "SKYLIGHT",
-    logo: "img/skylight.png"
-  },
-  {
-    name: "PROLINEA",
-    logo: "img/prolinea.png"
-  },
-  {
-    name: "ANA LUZ",
-    logo: "img/luminarch.png"
-  },
-  {
-    name: "LAMP LUZ",
-    logo: "img/vivoluce.png"
-  },
-  {
-    name: "UNION",
-    logo: "img/illumina.png"
-  },
-  {
-    name: "MADELUSTRE",
-    logo: "img/artelia.png"
-  }
-];
+    function toggleWhats() {
+      document.getElementById("dropdownWhats")
+        .classList.toggle("show");
+    }
 
-const grid = document.getElementById("brandsGrid");
+    function toggleEmail() {
+      document.getElementById("dropdownEmail")
+        .classList.toggle("show");
+    }
 
-brands.forEach(brand => {
+    /* Fecha clicando fora */
+    window.onclick = function (e) {
+      if (!e.target.closest('.dropdown')) {
+        document
+          .querySelectorAll(".dropdown-content")
+          .forEach(el => el.classList.remove("show"));
+      }
+    }
 
-  const card = document.createElement("div");
-  card.className = "card";
+    const brands = [
+      {
+        name: "PIX",
+        logo: "img/pix.png"
+      },
+      {
+        name: "FOCO METALLO",
+        logo: "img/focometallo.png"
+      },
+      {
+        name: "SKYLIGHT",
+        logo: "img/skylight.png"
+      },
+      {
+        name: "PROLINEA",
+        logo: "img/prolinea.png"
+      },
+      {
+        name: "ANA LUZ",
+        logo: "img/analuz.png"
+      },
+      {
+        name: "LAMP LUZ",
+        logo: "img/lampluz.png"
+      },
+      {
+        name: "UNION",
+        logo: "img/union.png"
+      },
+      {
+        name: "MADELUSTRE",
+        logo: "img/madelustre.png"
+      },
+      {
+        name: "USINA",
+        logo: "img/usina.png"
+      },
+      {
+        name: "NETZER",
+        logo: "img/netzer.png"
+      },
+    ];
 
-  card.innerHTML = `
+    const grid = document.getElementById("brandsGrid");
+
+    brands.forEach(brand => {
+
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
     <img src="${brand.logo}" alt="${brand.name}">
     <div class="card-name">${brand.name}</div>
   `;
 
-  grid.appendChild(card);
+      grid.appendChild(card);
 
-});
+    });
 
-</script>
+  </script>
 
 </body>
+
 </html>
