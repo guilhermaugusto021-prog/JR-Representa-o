@@ -49,44 +49,61 @@
 
 
   <!-- ================= JAVASCRIPT DENTRO DO HTML ================= -->
-  <script>
+ <script>
 
-    const brands = [
-      "LUMINARCH",
-      "VIVOLUCE",
-      "ILLUMINA",
-      "ARTELIA",
-      "TECHLINE",
-      "INDUSTRO",
-      "ELARA",
-      "NOVALUX"
-    ];
+const brands = [
+  {
+    name: "PIX",
+    logo: "img/pix.png"
+  },
+  {
+    name: "FOCO METALLO",
+    logo: "img/focometallo.png"
+  },
+  {
+    name: "SKYLIGHT",
+    logo: "img/skylight.png"
+  },
+  {
+    name: "PROLINEA",
+    logo: "img/prolinea.png"
+  },
+  {
+    name: "ANA LUZ",
+    logo: "img/luminarch.png"
+  },
+  {
+    name: "LAMP LUZ",
+    logo: "img/vivoluce.png"
+  },
+  {
+    name: "UNION",
+    logo: "img/illumina.png"
+  },
+  {
+    name: "MADELUSTRE",
+    logo: "img/artelia.png"
+  }
+];
 
-    const grid = document.getElementById("brandsGrid");
+const grid = document.getElementById("brandsGrid");
 
-    brands.forEach(name => {
-      const card = document.createElement("div");
-      card.className = "card";
+brands.forEach(brand => {
 
-      card.innerHTML = `
-        <img src="https://picsum.photos/600/400?random=${name}" alt="${name}">
-        <div class="card-name">${name}</div>
-      `;
+  const card = document.createElement("div");
+  card.className = "card";
 
-      grid.appendChild(card);
-    });
+  card.innerHTML = `
+    <img src="${brand.logo}" alt="${brand.name}">
+    <div class="card-name">${brand.name}</div>
+  `;
 
-    // LOGIN MODAL
-    const modal = document.getElementById("loginModal");
-    const loginBtn = document.getElementById("loginBtn");
+  grid.appendChild(card);
 
-    loginBtn.onclick = () => modal.style.display = "flex";
+});
 
-    modal.onclick = (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    };
-
-  </script>
+</script>
 
 </body>
 </html>
+
