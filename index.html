@@ -1,0 +1,92 @@
+<!-- ================= HTML (JS INTEGRADO) ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lighting Representatives</title>
+
+  <!-- CSS EXTERNO -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">LIGHTING REPRESENTATIVES</div>
+    <nav class="nav-links">
+      <a href="#">Brands</a>
+      <a href="#">Catalogs</a>
+      <a href="#" id="loginBtn">Login</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Your Partner in Innovative Lighting Solutions</h1>
+    <p>Representing the industry's leading lighting brands</p>
+  </section>
+
+  <!-- BRANDS GRID -->
+  <section class="brands" id="brandsGrid"></section>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <input type="text" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button>Enter</button>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Lighting Representatives — All rights reserved
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT DENTRO DO HTML ================= -->
+  <script>
+
+    const brands = [
+      "LUMINARCH",
+      "VIVOLUCE",
+      "ILLUMINA",
+      "ARTELIA",
+      "TECHLINE",
+      "INDUSTRO",
+      "ELARA",
+      "NOVALUX"
+    ];
+
+    const grid = document.getElementById("brandsGrid");
+
+    brands.forEach(name => {
+      const card = document.createElement("div");
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="https://picsum.photos/600/400?random=${name}" alt="${name}">
+        <div class="card-name">${name}</div>
+      `;
+
+      grid.appendChild(card);
+    });
+
+    // LOGIN MODAL
+    const modal = document.getElementById("loginModal");
+    const loginBtn = document.getElementById("loginBtn");
+
+    loginBtn.onclick = () => modal.style.display = "flex";
+
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    };
+
+  </script>
+
+</body>
+</html>
