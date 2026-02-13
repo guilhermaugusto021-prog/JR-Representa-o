@@ -120,54 +120,62 @@
       {
         name: "SKYLIGHT",
         logo: "img/skylight.png",
+        page: "marcas/skylight.html"
       },
       {
         name: "PROLINEA",
         logo: "img/prolinea.png",
+        page: "marcas/prolinea.html"
       },
       {
         name: "ANA LUZ",
         logo: "img/analuz.png",
+        page: "marcas/analuz.html"
       },
       {
         name: "LAMP LUZ",
         logo: "img/lampluz.png",
+        page: "marcas/lampluz.html"
       },
       {
         name: "UNION",
         logo: "img/union.png",
+        page: "marcas/union.html"
       },
       {
         name: "MADELUSTRE",
         logo: "img/madelustre.png",
+        page: "marcas/madelustre.html"
       },
       {
         name: "USINA",
         logo: "img/usina.png",
+        page: "marcas/usina.html"
       },
       {
         name: "NETZER",
         logo: "img/netzer.png",
+        page: "marcas/netzer.html"
       },
     ];
 
 
     const grid = document.getElementById("brandsGrid");
 
-brands.forEach(brand => {
+    brands.forEach(brand => {
 
-  const card = document.createElement("a");   // ← vira link
-  card.className = "card";
-  card.href = brand.page;                     // ← página da marca
+      const card = document.createElement("a");   // ← vira link
+      card.className = "card";
+      card.href = brand.page;                     // ← página da marca
 
-  card.innerHTML = `
+      card.innerHTML = `
     <img src="${brand.logo}" alt="${brand.name}">
     <div class="card-name">${brand.name}</div>
   `;
 
-  grid.appendChild(card);
+      grid.appendChild(card);
 
-});
+    });
 
   </script>
 
