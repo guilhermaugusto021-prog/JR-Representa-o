@@ -109,61 +109,65 @@
     const brands = [
       {
         name: "PIX",
-        logo: "img/pix.png"
+        logo: "img/pix.png",
+        page: "marcas/pix.html"
       },
       {
         name: "FOCO METALLO",
-        logo: "img/focometallo.png"
+        logo: "img/focometallo.png",
+        page: "marcas/focometallo.html"
       },
       {
         name: "SKYLIGHT",
-        logo: "img/skylight.png"
+        logo: "img/skylight.png",
       },
       {
         name: "PROLINEA",
-        logo: "img/prolinea.png"
+        logo: "img/prolinea.png",
       },
       {
         name: "ANA LUZ",
-        logo: "img/analuz.png"
+        logo: "img/analuz.png",
       },
       {
         name: "LAMP LUZ",
-        logo: "img/lampluz.png"
+        logo: "img/lampluz.png",
       },
       {
         name: "UNION",
-        logo: "img/union.png"
+        logo: "img/union.png",
       },
       {
         name: "MADELUSTRE",
-        logo: "img/madelustre.png"
+        logo: "img/madelustre.png",
       },
       {
         name: "USINA",
-        logo: "img/usina.png"
+        logo: "img/usina.png",
       },
       {
         name: "NETZER",
-        logo: "img/netzer.png"
+        logo: "img/netzer.png",
       },
     ];
 
+
     const grid = document.getElementById("brandsGrid");
 
-    brands.forEach(brand => {
+brands.forEach(brand => {
 
-      const card = document.createElement("div");
-      card.className = "card";
+  const card = document.createElement("a");   // ← vira link
+  card.className = "card";
+  card.href = brand.page;                     // ← página da marca
 
-      card.innerHTML = `
+  card.innerHTML = `
     <img src="${brand.logo}" alt="${brand.name}">
     <div class="card-name">${brand.name}</div>
   `;
 
-      grid.appendChild(card);
+  grid.appendChild(card);
 
-    });
+});
 
   </script>
 
