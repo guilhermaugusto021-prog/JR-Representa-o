@@ -474,10 +474,32 @@ footer {
 
 
 /* BOTÃO VOLTAR */
+.navbar {
+  width: 100%;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  width: 100%;          /* faz ocupar toda a barra */
+}
+
+/* EMPURRA O BOTÃO */
 .btn-voltar {
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
+  margin-left: auto;   /* joga pra direita */
+  display: flex;
+  align-items: center;
+}
+
+.btn-voltar img {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-voltar img:hover {
+  transform: scale(1.1);
 }
 
 
