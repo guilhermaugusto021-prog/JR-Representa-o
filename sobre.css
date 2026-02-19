@@ -1,41 +1,41 @@
 /* HERO COM FOTO */
 
 .sobre-hero-bg {
-  position: relative;
-  height: 400px;
+    position: relative;
+    height: 400px;
 
-  background: url("../img/fundosobre.png") center/cover no-repeat;
+    background: url("../img/fundosobre.png") center/cover no-repeat;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  text-align: center;
-  color: #fff;
+    text-align: center;
+    color: #fff;
 }
 
 /* camada escura por cima da imagem */
 .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
 }
 
 /* conteúdo acima do overlay */
 .hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
 }
 
 .hero-content h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 20px;
-  max-width: 600px;
+    font-size: 20px;
+    max-width: 600px;
 }
 
 
@@ -108,4 +108,35 @@
     background: #111;
     color: #fff;
     margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+    .brands {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+    .hero .logo {
+        max-width: 260px;
+        /* diminui no mobile */
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .catalogo-card img {
+        width: 160px;
+    }
+
 }
