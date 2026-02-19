@@ -140,6 +140,26 @@
         width: 160px;
     }
 
+    @media (max-width: 768px) {
+
+  .sobre-hero-bg {
+    height: 300px;              /* reduz altura */
+    align-items: flex-end;      /* mantém embaixo */
+    padding-bottom: 10px;       /* menos espaço no mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 25px;            /* diminui título */
+  }
+
+  .hero-content p {
+    font-size: 15px;            /* diminui subtítulo */
+    padding: 0 15px;            /* evita texto colado na borda */
+  }
+
 }
+
+}
+
 
 
