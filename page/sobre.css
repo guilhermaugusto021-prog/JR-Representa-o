@@ -26,6 +26,7 @@
     position: relative;
     z-index: 2;
     padding: 20px;
+    margin-top: 80px;  /* desce o texto */
 }
 
 .hero-content h1 {
@@ -140,3 +141,4 @@
     }
 
 }
+
